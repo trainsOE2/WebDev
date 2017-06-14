@@ -1,0 +1,73 @@
+body{
+  background: #bdc3c7;
+}
+
+h1{
+  color: #9b59b6;
+}
+
+h2{
+  color: orange;
+}
+
+li{
+  color: #1000ff;
+}
+
+p{
+  background: yellow;
+}
+
+input{
+  border-width: 3px;
+}
+
+.hello{
+  background: white;
+}
+
+#special{
+  border: 2px solid rgb(10, 50, 255);
+}
+
+div p{
+  font-size: 25px;
+}
+
+input[type="text"]{
+  background:gray;
+}
+
+div:nth-of-type(3) p{
+  background: pink;
+}
+
+div:nth-of-type(3) p:nth-of-type(2){
+    border: 5px;
+}
+
+div:nth-of-type(3) p em{
+  font-size: 20px;
+  color: white;
+}
+
+input:checked{
+  margin-left: 50px;
+}
+
+label{
+  text-transform: uppercase;
+}
+
+#special::first-letter{
+  font-size: 100px;
+  color: green;
+}
+
+h1:hover{
+  color: blue;
+}
+
+a:visited{
+  color: gray;
+}
