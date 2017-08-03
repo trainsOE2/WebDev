@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Register</title>
+  </head>
+  <body>
+    <h1>Register</h1>
+
+    <form action="index.html" method="post">
+
+      <div>
+        <label for="firstName">First Name:</label>
+        <input id="firstName" name="firstName" type="text" value="fname">
+        <label for="lastName">Last Name:</label>
+        <input id="lastName" name="lastName" type="text" value="lname">
+      </div>
+      
+      <br>
+      <div>
+        <label for="male">Male</label>
+        <input id="male" type="radio" name="Gender" value="male">
+        <label for="female">Female</label>
+        <input id="female" type="radio" name="Gender" value="female">
+        <label for="other">Other</label>
+        <input id="other" type="radio" name="Gender" value="other">
+      </div>
+      
+      <br>
+      <div>
+        <label for="email">Email:</label>
+        <input id="email"type="email" name="email" required >
+        <label for="password">Password:</label>
+        <input id="password" type="string" name="psw" minlength="5" maxlength="10" required>
+      </div>
+      
+      <br>
+      <div>
+        <label for="bday">Birthday:</label>
+        <input id="bday" type="date" name="bday">
+      </div>
+      
+      <br>
+      <div>
+        <label for="t_c">I agree to the terms and conditions</label>
+        <input type="checkbox" name="t_c">
+      </div>
+      
+      <br>
+      
+      <input type="submit">
+       
+    </form>
+  </body>
+</html>
