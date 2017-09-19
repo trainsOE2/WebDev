@@ -1,0 +1,17 @@
+.square{
+  margin: 1.66%;
+  width: 30%;
+  background: purple;
+  padding-bottom: 30%;
+  float: left;
+
+}
+
+#container{
+  width: 40%;
+  margin: 0 auto;
+}
+
+body{
+  background-color: #232323;
+}
