@@ -12,6 +12,14 @@
   margin: 0 auto;
 }
 
+h1{
+  color: white;
+}
+
 body{
   background-color: #232323;
+}
+
+span{
+  color: white;
 }
