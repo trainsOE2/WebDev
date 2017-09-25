@@ -6,6 +6,19 @@ var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.getElementById("message");
 var resetButton = document.querySelector("#reset");
 
+var easyBtn = document.querySelector("#easy");
+var hardBtn = document.querySelector("#hard");
+
+easyBtn.addEventListener("click", function(){
+  easyBtn.classList.add("selected");
+  hardBtn.classList.remove("selected");
+})
+
+hardBtn.addEventListener("click", function(){
+  hardBtn.classList.add("selected");
+  easyBtn.classList.remove("selected");
+})
+
 resetButton.addEventListener("click", function(){
   resetButton.textContent = "New Colors";
   h.style.background = "#232323";
@@ -32,7 +45,11 @@ for( var i = 0 ; i < squares.length ; ++i){
         h.style.background = clickedColor;
     }
     else{
-      this.style.background = "#232323";
+      this.style.background = "#232323"
+      // var newColor = colors[i].replace("b", "ba");
+      // newColor.replace(")", ", 0.5)");
+      // console.log(newColor);
+      // this.style.background = newColor;
       messageDisplay.textContent = "Try Again!";
     }
   })
