@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Circles</title>
+    <link rel="stylesheet" href="circles.css">
+    <script type="text/javascript" src="paper-full.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+
+    //Drawing a line on the canvas
+      // var path = new Path();
+      // path.strokeColor = "blue";
+      // var start = new Point(10, 0);
+      // path.moveTo(start);
+      // path.lineTo(start + [-20, 0]);
+
+    //Drawing a grid of circles with grayscale gradient
+      // var myCircle = [];
+      // var x, y, r, i, R, G, B;
+      // i = 0;
+      // x = 10;
+      // y = 10;
+      // r = 3;
+      // R = 0.1;
+      //
+      // while(y < 1000){
+      //   while(x < 1000){
+      //     myCircle[i] = new Path.Circle(new Point(x, y), r);
+      //     myCircle[i].fillColor = new Color(R);
+      //     x += 150;
+      //     r += 2;
+      //     i++;
+      //     R += 0.12;
+      //   }
+      //   y += 150;
+      //   x = 10;
+      //   r = 3;
+      //   R = 0.2;
+      // }
+
+      /* Random circles */
+      function onKeyDown(event) {
+        var maxPoint = new Point(view.size.width, view.size.height);
+        var randomPoint = Point.random();
+        var point = randomPoint * maxPoint;
+        new Path.Circle(point, 10).fillColor = "grey";
+
+      }
+
+    </script>
+  </head>
+  <body>
+    <canvas id="myCanvas" resize></canvas>
+  </body>
+</html>
