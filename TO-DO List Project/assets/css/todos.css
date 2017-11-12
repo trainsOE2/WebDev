@@ -41,14 +41,19 @@ li:nth-child(2n){
 
 span{
   background: #e74c3c;
-  height: 29px;
+  height: 40px;
   margin-right: 20px;
-  text-align: center;
   width: 0;
   color: white;
   display: inline-block;
   transition: 0.2s linear;
   opacity: 0;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.fa-trash{
+  padding-top: 10px;
 }
 
 li:hover span{
