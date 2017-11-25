@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Touch and Feel</title>
+    <script type="text/javascript" src="D:\WebDevImplement\WebDev\Paper_Howler\paper-full.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.js"></script>
+    <link rel="stylesheet" type="text/css" href="TF.css">
+    <script type="text/paperscript" canvas="myCanvas">
+
+      var topLeft = new Point(10, 20);
+      var rectSize = new Size(200, 100);
+      var rect = new Rectangle(new Point(0, 0), new Size(view.size.width, view.size.height));
+      var path = new Path.Rectangle(rect);
+      path.fillColor = '#2c3e50';
+      path.selected = true;
+      console.log(rect); // { x: 10, y: 20, width: 200, height: 100 }
+      console.log(rect.point); // { x: 10, y: 20 }
+      console.log(rect.size); // { width: 200, height: 100 }
+
+      var maxPoint = new Point(view.size.width, view.size.height);
+      var randomPoint = Point.random();
+      var point = randomPoint * maxPoint;
+      var circle = new Circle(point, 100);
+
+      function onMouseMove(event){
+        var circle = new Circle()
+        cpath = new Path.Circle(circle);
+        cpath.fillColor = 'white';
+        cpath.selected = true;
+      }
+
+    </script>
+  </head>
+  <body>
+    <canvas id="myCanvas" resize></canvas>
+  </body>
+</html>
