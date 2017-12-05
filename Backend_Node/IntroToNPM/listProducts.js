@@ -1,4 +1,4 @@
-var faker = require("D:/node_modules/npm/node_modules/faker");
+var faker = require("D:/nodejs/node_modules/npm/node_modules/faker");
 var num = 10;
 console.log("================================");
 console.log("WELCOME TO MY SHOP");
