@@ -1,14 +1,16 @@
 {
   "name": "expressdemo",
   "version": "1.0.0",
-  "description": "Intro using EJS",
-  "main": "app.js",
+  "description": "Intro EJS",
+  "main": "expressApp.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Megha",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
     "express": "^4.16.2"
   }
 }
