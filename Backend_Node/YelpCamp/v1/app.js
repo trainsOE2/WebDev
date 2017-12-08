@@ -7,9 +7,14 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
 var campgrounds = [
-  {name: "Whitestone Bridge", image: "http://pinezanita.com/wp-content/uploads/2010/12/Tent-Campers-1.jpg" },
-  {name: "Pinewood Hilltop", image: "https://i.pinimg.com/736x/74/64/a0/7464a08b81342ce64ab658e12df63a68--camping-life-tent-camping.jpg"},
-  {name: "Clearskies Iceground", image: "https://blog.nationalparks.nsw.gov.au/uploads/2016/08/Stars_Camping-_DSC9408_Adrian-Mascenon-1600x1200.jpg" }
+  {name: "Whitestone Bridge", image: "https://professortaboo.files.wordpress.com/2014/01/campingstargazing.jpg" },
+  {name: "Pinewood Hilltop", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgFxcjk6jfxXoi2YwdCjsec4OsipZvqomdVLZQzTIBvsWJVTC8qA"},
+  {name: "Clearskies Iceground", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJlHtsQVJztVP4CxxWdUWxuPmnJfFpIxY43uOESvlXf6ASDq_8xw" },
+  {name: "Riverside Walks", image: "http://nomanbefore.com/wp-content/uploads/2017/07/JoshuaTree_Summer17_WEB-8770-1024x683.jpg"},
+  {name: "Horizon Hunters", image: "http://cdn.hiconsumption.com/wp-content/uploads/2016/05/Best-Camping-Tents-2016.jpg"},
+  {name: "Ranger", image: "https://www.mountainphotography.com/images/xl/20140226-Bridge-of-Heaven-Dusk-Camp.jpg"},
+  {name: "Stargazer", image: "https://s.blogcdn.com/travel.aol.co.uk/media/2012/05/tent.jpg"},
+  {name: "Starlight", image: "https://ak0.picdn.net/shutterstock/videos/7539250/thumb/1.jpg"}
 ];
 
 app.get("/", function(req, res){
