@@ -1,43 +1,71 @@
-var express = require('express');
-var app = express();
+var express      = require('express'),
+    app          = express(),
+    bodyParser   = require('body-parser'),
+    mongoose     = require('mongoose')
 
-var bodyParser = require('body-parser');
-
+mongoose.connect("mongodb://localhost/yelp_camp");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
-var campgrounds = [
-  {name: "Whitestone Bridge", image: "https://professortaboo.files.wordpress.com/2014/01/campingstargazing.jpg" },
-  {name: "Pinewood Hilltop", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgFxcjk6jfxXoi2YwdCjsec4OsipZvqomdVLZQzTIBvsWJVTC8qA"},
-  {name: "Clearskies Iceground", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJlHtsQVJztVP4CxxWdUWxuPmnJfFpIxY43uOESvlXf6ASDq_8xw" },
-  {name: "Riverside Walks", image: "http://nomanbefore.com/wp-content/uploads/2017/07/JoshuaTree_Summer17_WEB-8770-1024x683.jpg"},
-  {name: "Horizon Hunters", image: "http://cdn.hiconsumption.com/wp-content/uploads/2016/05/Best-Camping-Tents-2016.jpg"},
-  {name: "Ranger", image: "https://www.mountainphotography.com/images/xl/20140226-Bridge-of-Heaven-Dusk-Camp.jpg"},
-  {name: "Stargazer", image: "https://s.blogcdn.com/travel.aol.co.uk/media/2012/05/tent.jpg"},
-  {name: "Starlight", image: "https://ak0.picdn.net/shutterstock/videos/7539250/thumb/1.jpg"}
-];
+var campgroundSchema = new mongoose.Schema({
+  name: String,
+  image: String
+});
+
+var Campground = mongoose.model("Campground", campgroundSchema);
+
+// Campground.create(
+//   {
+//     name: "Riverside Walks",
+//     image: "http://nomanbefore.com/wp-content/uploads/2017/07/JoshuaTree_Summer17_WEB-8770-1024x683.jpg"
+//   }, function(err, campground){
+//     if(err){
+//       console.log(err);
+//     }else{
+//       console.log("NEWLY CREATED CAMPGROUND: ");
+//       console.log(campground);
+//     }
+//   }
+// );
+
+
 
 app.get("/", function(req, res){
   res.render("landing");
 });
 
 app.get("/campgrounds", function(req, res){
-
-
-  res.render("campgrounds", {campgrounds: campgrounds});
+  Campground.find({}, function(err, allCampgrounds){
+    if(err){
+      console.log(err);
+    } else{
+      res.render("index", {campgrounds:allCampgrounds});
+    }
+  });
 });
 
 app.post("/campgrounds", function(req, res){
   var name = req.body.name;
   var image = req.body.image;
   var newCampground = {name: name, image: image};
-  campgrounds.push(newCampground);
-  res.redirect("/campgrounds");
+  Campground.create(newCampground, function(err, newlyCreated){
+    if(err){
+      console.log(err);
+    } else{
+      res.redirect("/campgrounds");
+    }
+  });
+
 });
 
 app.get("/campgrounds/new", function(req, res){
   res.render("new");
 });
+
+app.get("/campgrounds/:id", function(req, res){
+  //res.send("This will be the SHOW page one day!");
+  res.render("show.ejs");
+})
 
 app.listen(3000, function(req, res){
   console.log("The YelpCamp Server has started!");
