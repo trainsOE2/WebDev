@@ -1,4 +1,9 @@
 {
-  "name": "",
-  "version": ""
+  "name": "RESful BlogApp",
+  "version": "1.0.0",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.6"
+  }
 }
