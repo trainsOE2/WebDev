@@ -1,4 +1,5 @@
 var mongoose = require("mongoose");
+var Promise = require("bluebird");
 mongoose.connect("mongodb://localhost/blog_demo");
 
 //POST - title, content
@@ -37,17 +38,23 @@ var User = mongoose.model("User", userSchema);
 //   }
 // })
 
+//if nothing else works
+// user.update({$push: {
+//   'posts.$.title': "3 Things I really hate",
+//   'posts.$.content': "Voldemort. Voldemort. Voldemort"
+// }});
+
 // Find Users
 // all users from findOne function.
 // user in user.save() new user with the added post.
 User.findOne({name: "Hermione Granger"}, function(err, user){
   if(err){
-    //console.log(err);
+    console.log(err);
   } else {
-    user.posts.push({
-      title: "3 Thins I really hate",
-      content: "Voldemort. Voldemort. Voldemort"
-    });
+    user.update({$push: {
+      'posts.title': "3 Things I really hate",
+      'posts.content': "Voldemort. Voldemort. Voldemort"
+    }});
     user.save(function(err, user){
       if(err){
         console.log(err);
@@ -55,6 +62,5 @@ User.findOne({name: "Hermione Granger"}, function(err, user){
         console.log(user);
       }
     });
-
   }
 });
