@@ -1,5 +1,4 @@
 var mongoose = require("mongoose");
-var Promise = require("bluebird");
 mongoose.connect("mongodb://localhost/blog_demo");
 
 //POST - title, content
@@ -25,7 +24,7 @@ var User = mongoose.model("User", userSchema);
 //   name: "Hermione Granger"
 // });
 //
-// newUser.posts.push({
+// newUser.posts.push({ //somehow this push() works!
 //   title: "How to brew Ployjuice potion",
 //   content: "Go to potions class and learn it"
 // })
