@@ -50,10 +50,15 @@ User.findOne({name: "Hermione Granger"}, function(err, user){
   if(err){
     console.log(err);
   } else {
-    user.update({$push: {
+    user.update({$push: { //this doesn't give error but doesn't push either
       'posts.title': "3 Things I really hate",
       'posts.content': "Voldemort. Voldemort. Voldemort"
     }});
+    //the "push" below doesn't work and gives the error in the .txt file attached to this email
+    // user.posts.push({
+    //         title: "3 Things I really hate",
+    //         content: "Voldemort.  Voldemort. Voldemort"
+    //     });
     user.save(function(err, user){
       if(err){
         console.log(err);
