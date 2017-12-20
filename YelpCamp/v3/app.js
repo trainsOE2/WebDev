@@ -57,6 +57,8 @@ app.get("/campgrounds/:id", function(req, res){
   });
 });
 
+
+
 app.listen(3000, function(req, res){
   console.log("The YelpCamp Server has started!");
 });
